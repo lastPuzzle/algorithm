@@ -10,10 +10,9 @@
 
         for (i = 0; i < s.length; i++) {
           if (s.indexOf(s[i]) === i) {
-            answer = answer + s[i];
+            answer += s[i];
           }
         }
-
         return answer;
       }
       console.log(solution("ksekkset"));
