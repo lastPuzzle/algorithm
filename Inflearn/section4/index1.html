@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, arr) {
+        let answer,
+          max = Number.MIN_SAFE_INTEGER;
+        for (x of arr) {
+          var data = x
+            .toString()
+            .split("")
+            .reduce((a, b) => a + Number(b), 0);
+
+          if (max === data) {
+            answer = Math.max(answer, x);
+          } else if (max < data) {
+            answer = x;
+            max = data;
+          }
+        }
+        return answer;
+      }
+
+      let ok = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, ok));
+    </script>
+  </body>
+</html>
