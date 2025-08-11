@@ -9,13 +9,12 @@
         let answer = "";
 
         for (i = 0; i < a.length; i++) {
-          if (a[i] === b[i]) answer += "D\n";
-          else if (a[i] === 3 && b[i] === 1) answer += "B\n";
-          else if (a[i] === 2 && b[i] === 3) answer += "B\n";
-          else if (a[i] === 1 && b[i] === 2) answer += "B\n";
-          else answer += "A\n";
+          if (a[i] === 3 && b[i] === 1) answer += "B";
+          else if (a[i] === 2 && b[i] === 3) answer += "B";
+          else if (a[i] === 1 && b[i] === 2) answer += "B";
+          else if (a[i] === b[i]) answer += "D";
+          else answer += "A";
         }
-
         return answer;
       }
 
