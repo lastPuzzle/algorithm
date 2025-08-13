@@ -6,16 +6,19 @@
   <body>
     <script>
       function solution(arr) {
-        let n = arr.length;
-        let answer = Array.from({ length: n }, () => 1);
+        const n = arr.length;
+        const sorted = [...arr].sort((a, b) => b - a);
+        const rankMap = new Map();
 
-        for (i = 0; i < n; i++) {
-          for (j = 0; j < n; j++) {
-            if (arr[j] > arr[i]) answer[i]++;
+        let rank = 1;
+        for (let i = 0; i < n; i++) {
+          if (!rankMap.has(sorted[i])) {
+            rankMap.set(sorted[i], rank);
           }
+          rank++;
         }
 
-        return answer;
+        return arr.map((score) => rankMap.get(score));
       }
 
       let arr = [87, 89, 92, 100, 76];

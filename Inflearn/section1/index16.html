@@ -6,14 +6,9 @@
   <body>
     <script>
       function solution(s) {
-        let answer = "";
+        let answer = s.split("").filter((v, i) => s.indexOf(v) === i);
 
-        for (i = 0; i < s.length; i++) {
-          if (s.indexOf(s[i]) === i) {
-            answer += s[i];
-          }
-        }
-        return answer;
+        return answer.join("");
       }
       console.log(solution("ksekkset"));
     </script>

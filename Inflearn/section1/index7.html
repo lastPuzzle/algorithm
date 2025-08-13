@@ -8,8 +8,11 @@
       function solution(day, arr) {
         let answer = 0;
         for (x of arr) {
-          if (x % 10 === day) answer++;
+          if (x % 10 === day) {
+            answer++;
+          }
         }
+
         return answer;
       }
 

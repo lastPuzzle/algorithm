@@ -7,12 +7,12 @@
     <script>
       function solution(s) {
         let answer;
-        center = Math.floor(s.length / 2);
+        let center = Math.ceil(s.length / 2);
 
         if (s.length % 2 === 0) {
-          answer = s.substr(center - 1, 2);
+          answer = s[center] + s[center - 1];
         } else {
-          answer = s.substr(center, 1);
+          answer = s[center];
         }
 
         return answer;

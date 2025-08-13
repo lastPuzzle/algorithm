@@ -8,13 +8,13 @@
       function solution(a, b) {
         let answer = "";
 
-        for (i = 0; i < a.length; i++) {
-          if (a[i] === 3 && b[i] === 1) answer += "B";
-          else if (a[i] === 2 && b[i] === 3) answer += "B";
-          else if (a[i] === 1 && b[i] === 2) answer += "B";
-          else if (a[i] === b[i]) answer += "D";
-          else answer += "A";
-        }
+        answer = a.map((v, i) => {
+          if (v === 3 && b[i] === 1) return "B";
+          if (v === 2 && b[i] === 3) return "B";
+          if (v === 1 && b[i] === 2) return "B";
+          if (v === b[i]) return "D";
+          return "A";
+        });
         return answer;
       }
 
