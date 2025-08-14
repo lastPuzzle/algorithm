@@ -8,16 +8,12 @@
       function solution(s) {
         let answer = "";
         let cnt = 1;
-
         for (i = 0; i < s.length; i++) {
           if (s[i] === s[i + 1]) {
             cnt++;
           } else {
-            if (cnt === 1) {
-              answer += s[i];
-            } else {
-              answer += s[i] + cnt.toString();
-            }
+            answer += s[i];
+            if (cnt > 1) answer += String(cnt);
             cnt = 1;
           }
         }
