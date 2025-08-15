@@ -9,18 +9,19 @@
         let answer,
           max = Number.MIN_SAFE_INTEGER;
         for (x of arr) {
-          var data = x
+          let sum = x
             .toString()
             .split("")
-            .reduce((a, b) => a + Number(b), 0);
+            .reduce((a, b) => Number(a) + Number(b), 0);
 
-          if (max === data) {
-            answer = Math.max(answer, x);
-          } else if (max < data) {
+          if (sum > max) {
+            max = sum;
             answer = x;
-            max = data;
+          } else if (sum === max) {
+            answer = Math.max(answer, x);
           }
         }
+
         return answer;
       }
 
