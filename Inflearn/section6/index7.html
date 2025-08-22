@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(need, plan) {
+        let needIndex = 0;
+
+        for (let x of plan) {
+          if (needIndex < need.length && x === need[needIndex]) {
+            needIndex++;
+          }
+        }
+
+        return needIndex === need.length ? "YES" : "NO";
+      }
+
+      let a = "CBA";
+      let b = "CBDAGE";
+      console.log(solution(a, b));
+    </script>
+  </body>
+</html>

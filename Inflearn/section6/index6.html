@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(n, k) {
+        const queue = Array.from({ length: n }, (_, i) => i + 1);
+        let index = 0;
+
+        while (queue.length > 1) {
+          index = (index + k - 1) % queue.length;
+          queue.splice(index, 1);
+        }
+
+        return queue[0];
+      }
+
+      console.log(solution(8, 3));
+    </script>
+  </body>
+</html>
